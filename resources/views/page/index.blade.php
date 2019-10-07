@@ -13,6 +13,7 @@
     <h5>Category: {{$post-> category -> name}}</h5>
   </a>
 
+  <a href="{{route('pressEditPost', $post -> id)}}">UPDATE POST</a>
 </div>
 <?php endforeach; ?>
 @endsection

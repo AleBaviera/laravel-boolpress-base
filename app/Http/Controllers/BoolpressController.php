@@ -65,7 +65,8 @@ class BoolpressController extends Controller
      */
     public function edit($id)
     {
-        //
+      $post = Post::findOrFail($id);
+      return view('page.updatePost', compact('post'));
     }
 
     /**
@@ -77,7 +78,13 @@ class BoolpressController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $validatedData = $request->validate([
+          "title" => "required",
+          "content" => "required",
+          "author" => "required"
+        ]);
+      Post::whereId($id)-> update($validatedData);
+      return redirect('/');
     }
 
     /**

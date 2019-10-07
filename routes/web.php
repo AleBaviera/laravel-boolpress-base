@@ -13,4 +13,6 @@
 
 Route::get('/', 'BoolpressController@index')-> name('pressIndex');
 Route::get('/categories/{category_id}' , 'BoolpressController@showPostsByCategory') -> name('pressShowPostsByCategory');
-Route::get('/show/{category_id}' , 'BoolpressController@show') -> name('pressShowPost');
+Route::get('/show/{id}' , 'BoolpressController@show') -> name('pressShowPost');
+Route::get('/edit/{id}' , 'BoolpressController@edit') -> name('pressEditPost');
+Route::post('/update/{id}' , 'BoolpressController@update') -> name('pressUpdatePost');
