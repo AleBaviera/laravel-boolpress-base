@@ -19,6 +19,11 @@ class BoolpressController extends Controller
       return view('page.index', compact('posts'));
     }
 
+    public function showPostsByCategory($id){
+
+      $categoryPosts = Post::where('category_id', $id)-> get();
+      return view('page.categoryPosts', compact('categoryPosts'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -48,7 +53,7 @@ class BoolpressController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**

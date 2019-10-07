@@ -1,18 +1,12 @@
 @extends('layout.post-layout')
 @section('content')
-
-<?php foreach ($posts as $post): ?>
+<a href="{{route('pressIndex')}}">BACK</a>
+<?php foreach ($categoryPosts as $post): ?>
 <div class="box">
   <p>Title: {{$post-> title}}</p>
   <p>Author: {{$post-> author}}</p>
   <p>Content: {{$post-> content}}</p>
-
-
-
-      <a href="{{route('pressShowPostsByCategory', $post -> category_id)}}">
-        <h5>Category: {{$post-> category -> name}}</h5>
-      </a>
-
+  <h5>Category: {{$post-> category -> name}}</h5>
 </div>
 <?php endforeach; ?>
 @endsection
