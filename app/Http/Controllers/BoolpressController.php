@@ -53,7 +53,8 @@ class BoolpressController extends Controller
      */
     public function show($id)
     {
-
+      $post = Post::findOrFail($id);
+      return view('page.showPost', compact('post'));
     }
 
     /**
