@@ -14,6 +14,8 @@
   </a>
 
   <a href="{{route('pressEditPost', $post -> id)}}">UPDATE POST</a>
+  <a href="{{route('pressDeletePost', $post -> id)}}">DELETE POST</a>
+
 </div>
 <?php endforeach; ?>
 @endsection

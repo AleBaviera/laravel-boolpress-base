@@ -16,3 +16,4 @@ Route::get('/categories/{category_id}' , 'BoolpressController@showPostsByCategor
 Route::get('/show/{id}' , 'BoolpressController@show') -> name('pressShowPost');
 Route::get('/edit/{id}' , 'BoolpressController@edit') -> name('pressEditPost');
 Route::post('/update/{id}' , 'BoolpressController@update') -> name('pressUpdatePost');
+Route::get('/delete/{id}' , 'BoolpressController@destroy') -> name('pressDeletePost');
