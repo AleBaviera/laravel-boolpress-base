@@ -31,7 +31,8 @@ class BoolpressController extends Controller
      */
     public function create()
     {
-        //
+      $categories = Category::all();
+      return view('page.addPost', compact('categories'));
     }
 
     /**
@@ -42,7 +43,15 @@ class BoolpressController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+      $validatedData = $request->validate([
+          "title" => "required",
+          "content" => "required",
+          "author" => "required",
+          'category_id'=> 'required'
+        ]);
+        Post::create($validatedData);
+        return redirect('/');
     }
 
     /**
@@ -66,7 +75,8 @@ class BoolpressController extends Controller
     public function edit($id)
     {
       $post = Post::findOrFail($id);
-      return view('page.updatePost', compact('post'));
+      $categories = Category::all();
+      return view('page.updatePost', compact('post', 'categories'));
     }
 
     /**
@@ -81,7 +91,8 @@ class BoolpressController extends Controller
       $validatedData = $request->validate([
           "title" => "required",
           "content" => "required",
-          "author" => "required"
+          "author" => "required",
+          'category_id'=> 'required'
         ]);
       Post::whereId($id)-> update($validatedData);
       return redirect('/');

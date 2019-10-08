@@ -1,6 +1,8 @@
 @extends('layout.post-layout')
 @section('content')
 
+<a href="{{route('pressCreatePost')}}">ADD POST</a>
+
 <?php foreach ($posts as $post): ?>
 <div class="box">
   <p>Title: {{$post-> title}}</p>

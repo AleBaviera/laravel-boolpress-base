@@ -17,3 +17,5 @@ Route::get('/show/{id}' , 'BoolpressController@show') -> name('pressShowPost');
 Route::get('/edit/{id}' , 'BoolpressController@edit') -> name('pressEditPost');
 Route::post('/update/{id}' , 'BoolpressController@update') -> name('pressUpdatePost');
 Route::get('/delete/{id}' , 'BoolpressController@destroy') -> name('pressDeletePost');
+Route::get('/create' , 'BoolpressController@create') -> name('pressCreatePost');
+Route::post('/store' , 'BoolpressController@store') -> name('pressStorePost');

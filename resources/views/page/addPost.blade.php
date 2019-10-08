@@ -2,20 +2,20 @@
 @section('content')
 <a href="{{route('pressIndex')}}">BACK</a>
 <div class="box">
-  <form class="" action="{{route('pressUpdatePost', $post-> id)}}" method="post">
+  <form class="" action="{{route('pressStorePost')}}" method="post">
     @csrf
     @method('POST')
     <div class="">
       <label for="title">title</label>
-      <input type="text" name="title" value="{{$post-> title}}">
+      <input type="text" name="title" value="">
     </div>
     <div class="">
       <label for="author">author</label>
-      <input type="text" name="author" value="{{$post-> author}}">
+      <input type="text" name="author" value="">
     </div>
     <div class="">
       <label for="content">content</label>
-      <input type="text" name="content" value="{!! html_entity_decode($post-> content) !!}">
+      <input type="text" name="content" value="">
     </div>
     <div class="">
       <label for="category">category</label>
@@ -26,8 +26,7 @@
 
       </select>
     </div>
-
-    <button type="submit" name="button">UPDATE</button>
+    <button type="submit" name="button">CREATE</button>
   </form>
 </div>
 @endsection
