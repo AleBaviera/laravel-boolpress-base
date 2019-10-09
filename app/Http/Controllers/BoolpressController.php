@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Category;
+use App\Tag;
 
 class BoolpressController extends Controller
 {
@@ -23,6 +24,12 @@ class BoolpressController extends Controller
 
       $categoryPosts = Post::where('category_id', $id)-> get();
       return view('page.categoryPosts', compact('categoryPosts'));
+    }
+
+    public function showTagsByPost($id){
+      $post= Post::findOrFail($id);
+
+      return view('page.postTags', compact( 'post'));
     }
     /**
      * Show the form for creating a new resource.

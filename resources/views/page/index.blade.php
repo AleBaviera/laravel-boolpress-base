@@ -10,6 +10,7 @@
   <p>Content: {!!$post-> content!!}</p>
 
   <a href="{{route('pressShowPost', $post -> id)}}">SHOW POST</a>
+  <a href="{{route('pressTagsPost', $post -> id)}}">SHOW TAGS</a>
 
   <a href="{{route('pressShowPostsByCategory', $post -> category_id)}}">
     <h5>Category: {{$post-> category -> name}}</h5>

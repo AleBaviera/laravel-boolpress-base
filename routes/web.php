@@ -19,3 +19,4 @@ Route::post('/update/{id}' , 'BoolpressController@update') -> name('pressUpdateP
 Route::get('/delete/{id}' , 'BoolpressController@destroy') -> name('pressDeletePost');
 Route::get('/create' , 'BoolpressController@create') -> name('pressCreatePost');
 Route::post('/store' , 'BoolpressController@store') -> name('pressStorePost');
+Route::get('/tags/{id}' , 'BoolpressController@showTagsByPost') -> name('pressTagsPost');
