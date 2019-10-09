@@ -3,6 +3,8 @@
 
 <a href="{{route('pressCreatePost')}}">ADD POST</a>
 
+<a href="{{route('pressShowTags')}}">SHOW ALL TAGS</a>
+
 <?php foreach ($posts as $post): ?>
 <div class="box">
   <p>Title: {{$post-> title}}</p>

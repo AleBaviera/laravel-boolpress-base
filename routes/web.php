@@ -21,3 +21,4 @@ Route::get('/create' , 'BoolpressController@create') -> name('pressCreatePost');
 Route::post('/store' , 'BoolpressController@store') -> name('pressStorePost');
 Route::get('/tags/{id}' , 'BoolpressController@showTagsByPost') -> name('pressTagsPost');
 Route::get('/posts/{id}' , 'BoolpressController@showPostsByTag') -> name('pressPostsTag');
+Route::get('/tags' , 'BoolpressController@showTags') -> name('pressShowTags');
