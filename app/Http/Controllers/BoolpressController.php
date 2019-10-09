@@ -31,6 +31,12 @@ class BoolpressController extends Controller
 
       return view('page.postTags', compact( 'post'));
     }
+
+    public function showPostsByTag($id){
+      $tag= Tag::findOrFail($id);
+
+      return view('page.tagPosts', compact( 'tag'));
+    }
     /**
      * Show the form for creating a new resource.
      *
