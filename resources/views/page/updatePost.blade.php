@@ -15,7 +15,7 @@
     </div>
     <div class="">
       <label for="content">content</label>
-      <input type="text" name="content" value="{!! html_entity_decode($post-> content) !!}">
+      <input type="text" name="content" value="{{$post-> content }}">
     </div>
     <div class="">
       <label for="category">category</label>
