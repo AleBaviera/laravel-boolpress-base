@@ -19,7 +19,24 @@ class CreateAddForeignKeysTable extends Migration
       $table -> foreign('category_id', 'category')
              -> references('id')
              -> on('categories');
-    });
+     });
+
+     Schema::table('post_tag', function (Blueprint $table) {
+
+     $table -> bigInteger('post_id') -> unsigned() -> index();
+     $table -> foreign('post_id', 'post-tag_post')
+            -> references('id')
+            -> on('posts');
+      });
+
+      Schema::table('post_tag', function (Blueprint $table) {
+
+      $table -> bigInteger('tag_id') -> unsigned() -> index();
+      $table -> foreign('tag_id', 'tag-tag_post')
+             -> references('id')
+             -> on('tags');
+       });
+
     }
 
     /**
@@ -30,5 +47,7 @@ class CreateAddForeignKeysTable extends Migration
     public function down()
     {
         Schema::dropIfExists('add_foreign_keys');
+        Schema::dropIfExists('post-tag_post');
+        Schema::dropIfExists('tag-tag_post');
     }
 }
